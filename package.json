@@ -1,6 +1,6 @@
 {
   "name": "paramsvalidators",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Decorator to help validate params on routes.",
   "main": "index.js",
   "scripts": {
