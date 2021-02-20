@@ -1,0 +1,29 @@
+{
+  "name": "paramsvalidators",
+  "version": "1.0.0",
+  "description": "Decorator to help validate params on routes.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maqtulio/ParamsValidators.git"
+  },
+  "keywords": [
+    "decorator",
+    "cqrs",
+    "rest"
+  ],
+  "author": "Tulio Santiago Duarte",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maqtulio/ParamsValidators/issues"
+  },
+  "homepage": "https://github.com/maqtulio/ParamsValidators#readme",
+  "dependencies": {
+    "joi": "^17.4.0",
+    "reflect-metadata": "^0.1.13",
+    "typescript": "^4.1.5"
+  }
+}
