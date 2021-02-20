@@ -8,4 +8,4 @@ export function validate(params, options) {
     return registeredParamValidators[paramClassName].validate(params, options);
 }
 export { IParams } from "./IParams.js";
-export { registeredParamValidators } from './decorators.js';
+export { ParamsValidator } from './decorators.js';
