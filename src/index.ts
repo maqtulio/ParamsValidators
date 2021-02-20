@@ -3,7 +3,7 @@ import { registeredParamValidators } from './decorators.js';
 import Joi from "joi";
 
 
-export function validate(params: any, options: Joi.ValidationOptions | undefined) {
+export function validate(params: any, options: Joi.ValidationOptions | undefined): Joi.ValidationResult {
 
     const paramClassName = params.constructor.name;
     if (!(params instanceof IParams) || !Object.keys(registeredParamValidators).includes(paramClassName)) {
