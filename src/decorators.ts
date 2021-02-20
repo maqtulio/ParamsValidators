@@ -2,7 +2,7 @@ import Joi from "joi";
 import "reflect-metadata";
 import { IParams } from "./IParams.js";
 
-export const registeredParamValidators: { [key: string]: any } = {}
+export const registeredParamValidators: { [key: string]: Joi.Schema } = {}
 
 /**
  * @name validationSchema ParamsClass used on the route to be decorated. 
