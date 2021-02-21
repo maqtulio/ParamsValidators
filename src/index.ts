@@ -14,4 +14,4 @@ export function validate(params: any, options: Joi.ValidationOptions | undefined
 }
 
 export { IParams } from "./IParams.js"
-export { ParamsValidator } from './decorators.js';
+export { ParamsValidator, Controller, Method } from './decorators.js';
