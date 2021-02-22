@@ -17,7 +17,7 @@ export const ParamsValidator = (validationSchema: Joi.Schema):ClassDecorator => 
     };
 };
 
-export const HttpController = (prefix: string = ''): ClassDecorator => {
+export const Controller = (prefix: string = ''): ClassDecorator => {
     return (target: any) => {
         Reflect.defineMetadata('prefix', prefix, target);
 
@@ -29,7 +29,7 @@ export const HttpController = (prefix: string = ''): ClassDecorator => {
     };
 };
 
-export const HttpMethod = (path: string, requestMethod: 'get' | 'post' | 'delete' | 'options' | 'put' | "patch"): MethodDecorator => {
+export const Method = (path: string, requestMethod: 'get' | 'post' | 'delete' | 'options' | 'put' | "patch"): MethodDecorator => {
     // `target` equals our class, `propertyKey` equals our decorated method name
     return (target, propertyKey: any): void => {
         // In case this is the first route to be
