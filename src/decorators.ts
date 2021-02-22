@@ -17,7 +17,7 @@ export const ParamsValidator = (validationSchema: Joi.Schema):ClassDecorator => 
     };
 };
 
-export const Controller = (prefix: string = ''): ClassDecorator => {
+export const HttpController = (prefix: string = ''): ClassDecorator => {
     return (target: any) => {
         Reflect.defineMetadata('prefix', prefix, target);
 
