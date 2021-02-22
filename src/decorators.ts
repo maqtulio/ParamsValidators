@@ -8,7 +8,7 @@ export const registeredParamValidators: { [key: string]: Joi.Schema } = {}
 /**
  * @name validationSchema ParamsClass used on the route to be decorated. 
  */
-export const ParamsValidator = (validationSchema: Joi.Schema) => {
+export const ParamsValidator = (validationSchema: Joi.Schema):ClassDecorator => {
     return function (target: any) {
         if (Object.getPrototypeOf(target.prototype).constructor.name !== IParams.name) {
             throw new Error(`Decorated paramClass ${target.name} must extend IParams`)
@@ -19,17 +19,17 @@ export const ParamsValidator = (validationSchema: Joi.Schema) => {
 
 export const Controller = (prefix: string = ''): ClassDecorator => {
     return (target: any) => {
-      Reflect.defineMetadata('prefix', prefix, target);
-  
-      // Since routes are set by our methods this should 
-      //almost never be true (except the controller has no methods)
-      if (! Reflect.hasMetadata('routes', target)) {
-        Reflect.defineMetadata('routes', [], target);
-      }
-    };
-  };
+        Reflect.defineMetadata('prefix', prefix, target);
 
-  export const Method = (path: string, requestMethod: 'get' | 'post' | 'delete' | 'options' | 'put' | "patch"): MethodDecorator => {
+        // Since routes are set by our methods this should 
+        //almost never be true (except the controller has no methods)
+        if (!Reflect.hasMetadata('routes', target)) {
+            Reflect.defineMetadata('routes', [], target);
+        }
+    };
+};
+
+export const HttpMethod = (path: string, requestMethod: 'get' | 'post' | 'delete' | 'options' | 'put' | "patch"): MethodDecorator => {
     // `target` equals our class, `propertyKey` equals our decorated method name
     return (target, propertyKey: any): void => {
         // In case this is the first route to be
